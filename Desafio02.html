@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style> 
+   
+    div{
+      background-color: rgb(78, 78, 78);
+      width: 200px;
+      height: 300px;
+      padding: 20px;
+      margin: auto;
+      border-radius: 15px;
+      
+    }
+    h1{
+      font-family: Arial, Helvetica, sans-serif;
+      color: orange;
+      text-align: center; 
+      
+      
+      
+    }
+    input{
+      height: 29px;
+      width: 40px;
+      background-color: orange;
+      margin: 2px;
+      border-color: black;
+      border-radius: 25px;
+      font-weight: bolder;
+      font-size: large;
+      
+      
+    }
+    #zero {
+      width: 90px;
+    }
+
+    input:hover {
+      background-color: rgb(173, 118, 15);
+      cursor: pointer;
+    }
+
+    p{
+      background-color: white;
+      height: 25px;
+      border-radius: 15px;
+      padding: 8px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: right;
+      
+      
+    }
+     
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Calculadora</h1>
+    <p id="resultado"></p>
+    
+    <input type="button" value="C" onclick="limpar()">
+    <input type="button" value="D" onclick="deletar()">
+    <input type="button" value="/"onclick="Clicar('/')">
+    <input type="button" value="X"onclick="Clicar('*')"> <br>
+    <input type="button" value="7"onclick="Clicar('7')">
+    <input type="button" value="8"onclick="Clicar('8')">
+    <input type="button" value="9"onclick="Clicar('9')">
+    <input type="button" value="-"onclick="Clicar('-')"> <br>
+    <input type="button" value="4"onclick="Clicar('4')">
+    <input type="button" value="5"onclick="Clicar('5')">
+    <input type="button" value="6"onclick="Clicar('6')">
+    <input type="button" value="+"onclick="Clicar('+')"> <br>
+    <input type="button" value="1"onclick="Clicar('1')">
+    <input type="button" value="2"onclick="Clicar('2')">
+    <input type="button" value="3"onclick="Clicar('3')"> <br>
+    <input type="button" value="0" id="zero" onclick="Clicar('0')">
+    <input type="button" value="."onclick="Clicar('.')">
+    <input type="button" value="=" id="igual"onclick="calcular()">
+  </div>
+
+
+  <script>
+    function Clicar(num) {
+      var n = document.getElementById('resultado').innerHTML ;
+      document.getElementById('resultado').innerHTML = n + num
+    }
+    function limpar() {
+      document.getElementById('resultado').innerHTML = ("")  
+    }
+    function deletar() {
+      var r = document.getElementById('resultado').innerHTML;
+      document.getElementById('resultado').innerHTML = r.substring(0, r.length -1)
+    }
+    function calcular(){
+      var r = document.getElementById('resultado').innerHTML;
+      if (r){
+        document.getElementById('resultado').innerHTML = eval(r)
+      }
+    }
+  </script>
+
+
+
+</body>
+</html>
